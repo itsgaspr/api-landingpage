@@ -1,0 +1,147 @@
+html {
+  background-color: #0F1115;
+  color: #9CA3AF;
+}
+
+body {
+  min-height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: .7% 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 96%;
+  z-index: 999;
+  background-color: hsl(220, 17%, 7%, 60%);
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+
+header>.logo {
+  font-size: 3rem;
+}
+
+header>nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  gap: 3rem;
+  list-style-type: none;
+}
+
+
+header>nav ul a {
+  text-decoration: none;
+  color: #9CA3AF;
+}
+
+header>nav ul a:hover {
+  color: #3B82F6;
+  transition: .3s ease-in-out;
+}
+
+/*
+----hero----
+*/
+
+.hero {
+  height: 80vh;
+  position: relative;
+  top: 14vh;
+  padding: 1% 2%;
+}
+
+.hero>.hero-conteiner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 85%;
+  gap: 30px;
+  position: relative;
+  top: 2%;
+  box-sizing: border-box;
+}
+
+.hero>.hero-conteiner>.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero>.hero-conteiner>.intro .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero>.hero-conteiner>.intro h1 {
+  font-size: 6rem;
+  line-height: 1.7;
+}
+
+.hero>.hero-conteiner>.intro p {
+  font-size: 1.5rem;
+  line-height: normal;
+}
+
+.hero>.hero-conteiner>.intro .buttons {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  top: 10%;
+}
+
+.hero>.hero-conteiner>.intro .buttons>* {
+  height: 3rem;
+  width: 21%;
+  background-color: transparent;
+  color: #9CA3AF;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+
+}
+
+
+.hero>.hero-conteiner>.intro .buttons>.api-key-cta {
+  border-radius: 8px;
+  border: 1px solid #3B82F6;
+}
+
+.hero>.hero-conteiner>.intro .buttons>.api-key-cta:hover {
+  color: #3B82F6;
+  transition: .3s ease-in-out;
+}
+
+.hero>.hero-conteiner>.intro .buttons>.docs-btn {
+  color: #3B82F6;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+}
+
+.hero>.hero-conteiner>.intro .buttons>.docs-btn i {
+  font-weight: 900;
+  color: #3B82F6;
+  margin-left: 15px;
+}
+
+.hero .image {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.hero .image > .api-demo{
+  height: 500px;
+  width: 86%;
+}
