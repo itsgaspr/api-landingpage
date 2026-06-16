@@ -3,7 +3,7 @@ export default function Header() {
         <>
             <header>
                 <span className="logo">
-                    logo
+                    <i class="fa-solid fa-chart-pie"></i>
                 </span>
 
                 <nav>
@@ -22,10 +22,11 @@ export default function Header() {
                             <a href="#docs">documentation</a>
                         </li>
                         <li>
-                            <a href="sign-up">
-                                sign-up
-                            </a>
+                            <a href="#docs">contact</a>
                         </li>
+                        <buton className="sign-up">
+                            sign-Up
+                        </buton>
                     </ul>
                 </nav>
             </header>
