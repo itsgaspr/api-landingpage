@@ -15,7 +15,7 @@ export default function Hero() {
                         </h1>
 
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit enim explicabo odio nobis nihil assumenda natus, cupiditate, qui sint iusto rem earum eaque tempora voluptatibus quod voluptas ea ab! Repellat!
+                            Access Mozambique demographic data through a fast, structured REST API designed for developers building modern data-driven applications.
                         </p>
                         <div className="buttons">
                             <KeyCta />
@@ -27,7 +27,7 @@ export default function Hero() {
                 <div className="image">
 
                     <img src={ApiData} alt="api demo image" className="api-demo" />
-                    
+
                 </div>
             </div>
         </section>
