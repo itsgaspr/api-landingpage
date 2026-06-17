@@ -1,6 +1,6 @@
 html {
   background-color: #0F1115;
-  color: #9CA3AF;
+  color: #9fa7b6;
 }
 
 body {
@@ -10,24 +10,27 @@ body {
 * {
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 header {
-  padding: 1% 2%;
+  position: fixed;
+  top: 3%;
+  left: 6%;
+  right: 6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  width: 96%;
   z-index: 999;
-  background-color: hsl(220, 17%, 7%, 60%);
-  box-sizing: border-box;
+  background-color: hsl(220 17% 7% / 60%);
   text-transform: capitalize;
 }
 
 header>.logo {
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: #3B82F6;
   cursor: pointer;
 }
@@ -36,8 +39,8 @@ header>nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.5rem;
-  gap: 2.6rem;
+  font-size: 1.1rem;
+  gap: 2.2rem;
   list-style-type: none;
 }
 
@@ -52,70 +55,78 @@ header>nav ul a:hover {
   transition: .3s ease-in-out;
 }
 
-header>nav ul .sign-up{
-  border: 2px solid #2A2D35;
+header>nav ul .sign-up {
+  border: 1px solid #2A2D35;
   padding: 10px;
   text-align: center;
   border-radius: 10px;
   color: #3B82F6;
-  width: 7rem;
+  width: 6rem;
   cursor: pointer;
-  font-weight: 500;
 }
 
-header>nav ul .sign-up:hover{
+header>nav ul .sign-up:hover {
   color: #3abbf7;
   transition: .3s ease-in-out;
 }
 
-/*
-----hero----
-*/
+/* ---------------- HERO ---------------- */
 
 .hero {
-  height: 80vh;
+  height: fit-content;
   position: relative;
-  top: 14vh;
-  padding: 1% 2%;
+  top: 16vh;
+
+  margin-left: 6%;
+  margin-right: 6%;
 }
 
 .hero>.hero-conteiner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 85%;
-  gap: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60vh;
   position: relative;
-  top: 2%;
-  box-sizing: border-box;
+  top: 6vh;
+
 }
 
 .hero>.hero-conteiner>.intro {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  width: 55%;
 }
 
 .hero>.hero-conteiner>.intro .content {
   display: flex;
   flex-direction: column;
+  gap: 1.4rem;
+  position: relative;
+  top: 10%;
+  letter-spacing: 1px;
 }
 
 .hero>.hero-conteiner>.intro h1 {
-  font-size: 6rem;
-  line-height: 1.7;
+  font-size: 5.5rem;
+  line-height: normal;
+  font-weight: 400;
+}
+
+.hero>.hero-conteiner>.intro h1 span {
+  color: #3B82F6;
 }
 
 .hero>.hero-conteiner>.intro p {
-  font-size: 1.5rem;
-  line-height: 1.6;
+  font-size: 1.4rem;
+  line-height: 1.4;
 }
 
 .hero>.hero-conteiner>.intro .buttons {
   position: relative;
   display: flex;
   gap: 24px;
-  top: 10%;
+  top: 3%;
 }
 
 .hero>.hero-conteiner>.intro .buttons>* {
@@ -124,9 +135,10 @@ header>nav ul .sign-up:hover{
   background-color: transparent;
   color: #9CA3AF;
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 500;
   border: none;
   cursor: pointer;
+  text-transform: capitalize;
 
 }
 
@@ -155,19 +167,20 @@ header>nav ul .sign-up:hover{
   margin-left: 15px;
 }
 
-.hero>.hero-conteiner>.intro .buttons>.docs-btn:hover{
+.hero>.hero-conteiner>.intro .buttons>.docs-btn:hover {
   cursor: pointer;
   color: #3B82F6;
   transition: .3s ease-in-out;
 }
 
-.hero .image {
+.hero-conteiner .image {
+  height: 100%;
+  width: 30dvw;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
-}
-
-.hero .image > .api-demo{
-  height: 500px;
-  width: 86%;
+  background: url('./assets/dev.png');
+  background-position: center;
+  background-size: 120%;
+  background-repeat: repeat;
 }

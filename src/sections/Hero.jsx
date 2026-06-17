@@ -1,17 +1,18 @@
 import Header from "../components/Header";
 import DocsCta from "../components/Docs-Button";
 import KeyCta from "../components/Api-Key-Button";
-import ApiData from "../assets/moz_demog_api_json_hero.png"
+import Dev from "../assets/dev.png"
 
 export default function Hero() {
     return (
+        <>
         <section className="hero">
             <div className="hero-conteiner">
                 <div className="intro">
                     <div className="content">
 
                         <h1>
-                            Moz Demog API
+                            Demographic Data API <span>for Developers</span>
                         </h1>
 
                         <p>
@@ -25,11 +26,10 @@ export default function Hero() {
                 </div>
 
                 <div className="image">
-
-                    <img src={ApiData} alt="api demo image" className="api-demo" />
-
                 </div>
             </div>
         </section>
+        </>
+        
     )
 }
