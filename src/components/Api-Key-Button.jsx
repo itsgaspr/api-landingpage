@@ -1,7 +1,7 @@
-export default function KeyCta() {
+export default function KeyCta({text}) {
     return (
         <button className="api-key-cta">
-            get your api Key
+            {text}
         </button>
     )
 }
