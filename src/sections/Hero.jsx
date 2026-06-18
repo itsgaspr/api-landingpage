@@ -19,8 +19,8 @@ export default function Hero() {
                             Access Mozambique demographic data through a fast, structured REST API designed for developers building modern data-driven applications.
                         </p>
                         <div className="buttons">
-                            <KeyCta />
-                            <DocsCta />
+                            <KeyCta text={"get your api key"}/>
+                            <DocsCta text="read the docs"/>
                         </div>
                     </div>
                 </div>
