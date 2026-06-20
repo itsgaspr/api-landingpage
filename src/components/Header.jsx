@@ -3,7 +3,13 @@ export default function Header() {
         <>
             <header>
                 <span className="logo">
-                    <i class="fa-solid fa-chart-pie"></i>
+
+                    <a href="#home">
+                        <i class="fa-solid fa-chart-pie">
+
+                        </i>
+                    </a>
+
                 </span>
 
                 <nav>
