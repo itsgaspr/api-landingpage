@@ -26,6 +26,7 @@ export default function Hero() {
                 </div>
 
                 <div className="image">
+                    <img src={Dev} alt="" />
                 </div>
             </div>
         </section>
