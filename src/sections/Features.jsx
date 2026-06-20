@@ -39,8 +39,8 @@ export default function Features() {
                     <div className="q-start">
                         <h3>
                             Quick start
-                             <i class="fa-solid fa-arrow-right-long fa-fade"></i>
                         </h3>
+                         <i class="fa-solid fa-arrow-right-long fa-fade"></i>
                         <pre className="q-code">
                             <code>
                                 <span>
