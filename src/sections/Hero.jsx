@@ -6,7 +6,7 @@ import Dev from "../assets/dev.png"
 export default function Hero() {
     return (
         <>
-        <section className="hero" id="home">
+        <section id="home" className="hero">
             <div className="hero-conteiner">
                 <div className="intro">
                     <div className="content">

@@ -70,10 +70,17 @@ header>nav ul .sign-up:hover {
 }
 
 /* ---------------- HERO ---------------- */
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 .hero {
   height: fit-content;
-  margin: 22vh 6% 0;
+  margin: 0 6%;
 }
 
 .hero>.hero-conteiner {
