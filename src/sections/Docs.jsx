@@ -1,17 +1,18 @@
 import Card from "../components/Card";
 import DocsCta from "../components/Docs-Button";
+import SectionHeader from "../components/SectionHeader";
 
 export default function Docs() {
     return (
         <section className="docs h-screen flex items-center mx-28" id="docs">
             <div className="docs-conteiner py-12 flex flex-col">
-                <div className="headers flex flex-col gap-4 w-full mb-12">
-                    <h2 className="text-3xl font-normal text-blue-400">
-                        Endpoints & Docs
-                    </h2>
-                    <p className="w-1/3 text-left leading-6">
-                        Population, indicators, and provincial data from 2017 to 2026 — all from INE, all free, all in one API.
-                    </p>
+                <div className="headers flex flex-col gap-4 w-full">
+
+                    <SectionHeader
+                    title={"Endpoints & Docs"}
+                    description={"Population, indicators, and provincial data from 2017 to 2026 — all from INE, all free, all in one API."}
+
+                    />
                 </div>
 
                 <div className="card-conteiner w-full flex justify-between gap-6 flex-nowrap mb-12">

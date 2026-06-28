@@ -1,20 +1,19 @@
 import DocsCta from "../components/Docs-Button"
 import KeyCta from "../components/Api-Key-Button"
 import Card from "../components/Card"
+import SectionHeader from "../components/SectionHeader"
 
 export default function Features() {
     return (
         <>
             <section id="features" className="h-screen flex justify-center items-center mx-28">
                 <div className="flex flex-col justfy-center w-full">
-                    <div className="flex flex-col gap-10 mt-10">
-                        <div className="intro-header flex flex-col gap 3">
-                            <h2>
-                                features
-                            </h2>
-                            <p className="w-1/3">
-                                Population, indicators, and provincial data from 2017 to 2026 — all from INE, all free, all in one API.
-                            </p>
+                    <div className="flex flex-col mt-10">
+                        <div className="intro-header flex flex-col gap-3">
+                            <SectionHeader
+                            title={"Features"}
+                            description={"Population, indicators, and provincial data from 2017 to 2026 — all from INE, all free, all in one API."}
+                            />
                         </div>
 
                         <div className="card-conteiner w-full flex justify-between gap-1 flex-nowrap">
