@@ -4,7 +4,7 @@ export default function SectionHeader({title, description}) {
             <h2 className="text-3xl font-normal text-[#3B82F6]">
                 {title}
             </h2>
-            <p className="text-md leading-6 text-justify tracking-tight w-1/3">
+            <p className="text-lg leading-6 text-justify tracking-tight w-1/3">
                 {description}
             </p>
         </div>
