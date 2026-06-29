@@ -9,7 +9,7 @@ html {
 
 * {
   box-sizing: border-box;
-  font-family: inter;
+  /* font-family: inter; */
 }
 
 header {
@@ -144,26 +144,6 @@ header>nav ul .sign-up:hover {
 }
 
 /* -------- Features section -------*/
-
-#features .intro-header,
-#usecases .intro-header {
-  width: 100%;
-  margin-top: 1rem;
-}
-
-#features h2,
-#usecases h2 {
-  text-transform: capitalize;
-  color: #3abbf7;
-  line-height: 1.8;
-  font-weight: 500;
-}
-
-
-#features .intro-header h2 {
-  line-height: 1.6;
-  font-size: 1.9rem;
-}
 
 #card i {
   color: #3abbf7;
