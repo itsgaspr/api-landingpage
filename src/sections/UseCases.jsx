@@ -1,58 +1,59 @@
-import DocsCta from "../components/Docs-Button"
-import KeyCta from "../components/Api-Key-Button"
-import Card from "../components/Card"
-import SectionHeader from "../components/SectionHeader"
+import { useTranslation } from "../lib/i18n/index.js";
+import PageShell from "../components/PageShell.jsx";
+import SectionHeader from "../components/SectionHeader.jsx";
+
+const icons = {
+  apps: (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 text-accent" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <rect x="3" y="3" width="7" height="7" rx="1.5" />
+      <rect x="14" y="3" width="7" height="7" rx="1.5" />
+      <rect x="3" y="14" width="7" height="7" rx="1.5" />
+      <rect x="14" y="14" width="7" height="7" rx="1.5" />
+    </svg>
+  ),
+  research: (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 text-accent" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <path d="M4 19V5" />
+      <path d="M4 19h16" />
+      <path d="M8 17V11" />
+      <path d="M12 17V7" />
+      <path d="M16 17v-4" />
+    </svg>
+  ),
+  learning: (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 text-accent" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <path d="M4 19.5V6.5L12 3l8 3.5v13" />
+      <path d="M12 22V9.5" />
+      <path d="M4 6.5 12 10l8-3.5" />
+    </svg>
+  ),
+};
+
+const iconKeys = ["apps", "research", "learning"];
 
 export default function UseCases() {
-    return (
-        <>
-            <section className="h-screen mx-28 flex flex-col justify-center" id="usecases" >
-                <div className="flex flex-col justify-center items-center">
+  const { t } = useTranslation();
 
-                    <div className="heading flex flex-col gap-1 self-start w-full">
-                        <SectionHeader
-                        title={"Use Cases"}
-                        description={"From developers to researchers — Moz Demog API is free and open for anyone who needs reliable demographic data about Mozambique."}
-                        />
+  return (
+    <section id="use-cases" className="border-t border-white/5 py-24">
+      <PageShell>
+        <SectionHeader title={t.useCases.title} description={t.useCases.description} />
 
-                    </div>
-
-                    <div className="flex justify-between gap-3 w-full">
-                        <Card
-                            icon={<i class="fa-solid fa-code"></i>}
-                            title="Developers"
-                            description="Build data-driven apps, dashboards, and maps with structured demographic data from Mozambique — ready to query, no preprocessing needed."
-                        />
-                        <Card
-                            offset={30}
-                            icon={<i class="fa-solid fa-magnifying-glass-chart"></i>}
-                            title="Researchers & Academics"
-                            description="Access a decade of verified INE statistics to support population studies, trend analysis, and academic publications." />
-
-                        <Card
-                            offset={60}
-                            title="Students"
-                            icon={<i class="fa-solid fa-graduation-cap"></i>}
-                            description="Practice real-world API integration and data visualization with live, structured data — no setup, no cost, just query and build." />
-                    </div>
-
-                    <div className="flex justify-center items-center p-10 border-[#2A2D35] w-full mt-16
-                    
-                    border-b-2 border-b-blue-500 rounded-lg bg-[url('https://plus.unsplash.com/premium_photo-1678566111481-8e275550b700?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover">
-                        <div className="cards-cta flex justify-between w-1/5 self-end">
-                            <KeyCta text={"get your api-key"}
-                            />
-                            <DocsCta
-                                text={"read the docs"}
-                            />
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </section>
-        </>
-    )
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {t.useCases.items.map((item, index) => (
+            <article
+              key={item.title}
+              className="rounded-2xl border border-white/8 bg-white/[0.02] p-6 transition hover:border-accent"
+            >
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-muted">
+                {icons[iconKeys[index]]}
+              </div>
+              <h3 className="text-base font-medium text-white">{item.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-neutral-400">{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </PageShell>
+    </section>
+  );
 }
