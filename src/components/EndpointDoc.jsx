@@ -83,7 +83,7 @@ export default function EndpointDoc({ endpoint, labels, embedded = false }) {
             <CodeBlock>{endpoint.exampleRequest}</CodeBlock>
           </div>
         </div>
-        <div>
+        <div className="hidden lg:block">
           <h4 className="text-sm font-medium text-white">{labels.exampleResponse}</h4>
           <div className="mt-3">
             <CodeBlock>{endpoint.exampleResponse}</CodeBlock>

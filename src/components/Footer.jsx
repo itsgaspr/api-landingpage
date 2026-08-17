@@ -8,41 +8,54 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="border-t border-white/5">
-      <PageShell className="flex flex-col gap-4 py-10 text-sm text-neutral-500 sm:flex-row sm:items-center sm:justify-between">
-        <p>{t.footer.builtBy} therakius</p>
+    <footer className="border-t border-white/[0.06]">
+      <PageShell className="flex flex-col gap-5 py-8 text-sm text-neutral-500 sm:flex-row sm:items-center sm:justify-between sm:py-10">
+        <p className="text-xs sm:text-sm">{t.footer.builtBy} therakius</p>
 
-        <div className="flex flex-wrap gap-x-5 gap-y-2">
-          <Link to="/docs" className="hover:text-accent">
+        <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs sm:gap-x-5 sm:text-sm">
+          <Link to="/docs" className="transition hover:text-white">
             {t.footer.documentation}
           </Link>
           <button
             type="button"
             onClick={() => navigate("/#get-started")}
-            className="hover:text-accent"
+            className="transition hover:text-white"
           >
             {t.footer.getApiKey}
           </button>
           <button
             type="button"
             onClick={() => navigate("/#coverage")}
-            className="hover:text-accent"
+            className="hidden transition hover:text-white sm:inline"
           >
             {t.nav.coverage}
           </button>
-          <button type="button" onClick={() => navigate("/#faq")} className="hover:text-accent">
+          <button
+            type="button"
+            onClick={() => navigate("/#faq")}
+            className="transition hover:text-white"
+          >
             {t.footer.faq}
           </button>
-          <button type="button" onClick={() => navigate("/#contact")} className="hover:text-accent">
+          <button
+            type="button"
+            onClick={() => navigate("/#contact")}
+            className="hidden transition hover:text-white md:inline"
+          >
             {t.footer.contact}
           </button>
-          <Link to="/terms" className="hover:text-accent">
+          <Link to="/terms" className="transition hover:text-white">
             {t.footer.terms}
           </Link>
-          <Link to="/privacy" className="hover:text-accent">
+          <Link to="/privacy" className="transition hover:text-white">
             {t.footer.privacy}
           </Link>
-          <a href={HEALTH_URL} target="_blank" rel="noreferrer" className="hover:text-accent">
+          <a
+            href={HEALTH_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden transition hover:text-white lg:inline"
+          >
             {t.footer.status}
           </a>
         </div>

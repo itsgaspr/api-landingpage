@@ -16,7 +16,7 @@ export default function DataCoverage() {
   ];
 
   return (
-    <section id="coverage" className="border-t border-white/5 py-24">
+    <section id="coverage" className="section-padding border-t border-white/[0.06]">
       <PageShell>
         <div className="grid gap-12 lg:grid-cols-[1fr_220px] lg:items-start">
           <SectionHeader
@@ -24,7 +24,7 @@ export default function DataCoverage() {
             title={t.dataCoverage.title}
             description={t.dataCoverage.description}
           />
-          <div className="mx-auto w-full max-w-[220px] lg:mx-0 lg:max-w-[240px]">
+          <div className="mx-auto hidden w-full max-w-[220px] md:block lg:mx-0 lg:max-w-[240px]">
             <MozambiqueMap />
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function DataCoverage() {
           </table>
         </div>
 
-        <div className="mt-10 rounded-2xl border border-white/8 bg-white/[0.02] p-6">
+        <div className="mt-10 hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 md:block">
           <p className="text-sm leading-7 text-neutral-400">{PROVINCES.join(" · ")}</p>
           <p className="mt-4 text-sm text-neutral-500">{t.about.footnote}</p>
         </div>

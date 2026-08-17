@@ -7,7 +7,7 @@ export default function GetStarted({ openForgot = false }) {
   const { t } = useTranslation();
 
   return (
-    <section id="get-started" className="section-glow border-t border-white/5 py-24">
+    <section id="get-started" className="section-glow section-padding border-t border-white/[0.06]">
       <PageShell>
         <SectionHeader
           large

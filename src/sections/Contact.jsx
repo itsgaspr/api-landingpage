@@ -59,7 +59,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="border-t border-white/5 py-24">
+    <section id="contact" className="section-padding border-t border-white/[0.06]">
       <PageShell>
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <SectionHeader title={t.contact.title} description={t.contact.description} />

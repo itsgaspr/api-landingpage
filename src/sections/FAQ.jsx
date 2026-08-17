@@ -28,7 +28,7 @@ export default function FAQ() {
   const { t } = useTranslation();
 
   return (
-    <section id="faq" className="border-t border-white/5 py-24">
+    <section id="faq" className="section-padding border-t border-white/[0.06]">
       <PageShell>
         <SectionHeader title={t.faq.title} description={t.faq.description} />
 

@@ -35,7 +35,7 @@ export default function UseCases() {
   const { t } = useTranslation();
 
   return (
-    <section id="use-cases" className="border-t border-white/5 py-24">
+    <section id="use-cases" className="section-padding border-t border-white/[0.06]">
       <PageShell>
         <SectionHeader title={t.useCases.title} description={t.useCases.description} />
 
@@ -43,7 +43,7 @@ export default function UseCases() {
           {t.useCases.items.map((item, index) => (
             <article
               key={item.title}
-              className="rounded-2xl border border-white/8 bg-white/[0.02] p-6 transition hover:border-accent"
+              className="surface-card p-5 sm:p-6"
             >
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent-muted">
                 {icons[iconKeys[index]]}

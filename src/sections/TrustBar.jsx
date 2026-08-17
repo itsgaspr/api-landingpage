@@ -6,14 +6,14 @@ export default function TrustBar() {
   const { t } = useTranslation();
 
   return (
-    <section className="border-b border-white/5 bg-white/[0.02] py-5">
+    <section className="border-b border-white/[0.06] bg-black/40 py-4">
       <PageShell>
         <div className="flex flex-wrap gap-2">
           <a
             href={INE_URL}
             target="_blank"
             rel="noreferrer"
-            className="badge-pill transition hover:border-accent"
+            className="badge-pill badge-pill--accent transition hover:opacity-90"
           >
             {t.trust.badges.ine}
           </a>
@@ -23,13 +23,13 @@ export default function TrustBar() {
             href={HEALTH_URL}
             target="_blank"
             rel="noreferrer"
-            className="badge-pill transition hover:border-accent"
+            className="badge-pill hidden sm:inline-flex transition hover:border-white/20"
           >
             {t.trust.badges.status}
           </a>
-          <span className="badge-pill">{LAST_UPDATED}</span>
+          <span className="badge-pill hidden md:inline-flex">{LAST_UPDATED}</span>
         </div>
-        <p className="mt-4 text-xs leading-6 text-neutral-500">{t.trust.disclaimer}</p>
+        <p className="mt-3 hidden text-xs leading-6 text-neutral-600 md:block">{t.trust.disclaimer}</p>
       </PageShell>
     </section>
   );

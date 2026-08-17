@@ -11,16 +11,14 @@ function scrollTo(href) {
   document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
 }
 
-function sectionClass(activeSection, sectionId, pathname) {
+function navLinkClass(activeSection, sectionId, pathname) {
   const onHome = pathname === "/";
   const isActive =
     sectionId === "docs"
       ? pathname === "/docs" || (onHome && activeSection === "docs")
       : onHome && activeSection === sectionId;
 
-  return isActive
-    ? "text-accent"
-    : "text-neutral-400 transition hover:text-white";
+  return isActive ? "nav-link nav-link--active" : "nav-link";
 }
 
 export default function Header() {
@@ -34,7 +32,6 @@ export default function Header() {
       scrollTo(hash);
       return;
     }
-
     navigate(`/${hash}`);
   }
 
@@ -43,63 +40,48 @@ export default function Header() {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
-
     goToSection("#docs");
   }
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-black/60 backdrop-blur-xl">
-      <PageShell className="flex items-center justify-between py-4">
-        <Link to="/" className="text-sm font-medium text-white">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.06] bg-black/70 backdrop-blur-2xl backdrop-saturate-150">
+      <PageShell className="flex h-14 items-center justify-between sm:h-16">
+        <Link to="/" className="text-[0.9375rem] font-medium tracking-tight text-white">
           {t.brand}
         </Link>
 
-        <nav className="hidden items-center gap-5 lg:gap-6 xl:flex">
-          <button
-            type="button"
-            className={`text-sm ${sectionClass(activeSection, "integrate", pathname)}`}
-            onClick={() => goToSection("#integrate")}
-          >
-            {t.nav.integrate}
-          </button>
-          <button
-            type="button"
-            className={`text-sm ${sectionClass(activeSection, "coverage", pathname)}`}
-            onClick={() => goToSection("#coverage")}
-          >
-            {t.nav.coverage}
-          </button>
-          <button
-            type="button"
-            className={`text-sm ${sectionClass(activeSection, "use-cases", pathname)}`}
-            onClick={() => goToSection("#use-cases")}
-          >
-            {t.nav.useCases}
-          </button>
-          <button
-            type="button"
-            className={`text-sm ${sectionClass(activeSection, "docs", pathname)}`}
-            onClick={goToDocs}
-          >
-            {t.nav.docs}
-          </button>
-          <button
-            type="button"
-            className={`text-sm ${sectionClass(activeSection, "faq", pathname)}`}
-            onClick={() => goToSection("#faq")}
-          >
-            {t.nav.faq}
-          </button>
-          <button
-            type="button"
-            className={`text-sm ${sectionClass(activeSection, "contact", pathname)}`}
-            onClick={() => goToSection("#contact")}
-          >
-            {t.nav.contact}
-          </button>
+        <nav className="hidden items-center gap-7 xl:flex">
+          {[
+            ["integrate", "#integrate", t.nav.integrate],
+            ["coverage", "#coverage", t.nav.coverage],
+            ["use-cases", "#use-cases", t.nav.useCases],
+            ["docs", null, t.nav.docs],
+            ["faq", "#faq", t.nav.faq],
+            ["contact", "#contact", t.nav.contact],
+          ].map(([id, hash, label]) =>
+            id === "docs" ? (
+              <button
+                key={id}
+                type="button"
+                className={navLinkClass(activeSection, id, pathname)}
+                onClick={goToDocs}
+              >
+                {label}
+              </button>
+            ) : (
+              <button
+                key={id}
+                type="button"
+                className={navLinkClass(activeSection, id, pathname)}
+                onClick={() => goToSection(hash)}
+              >
+                {label}
+              </button>
+            )
+          )}
         </nav>
 
-        <div className="flex items-center gap-3 sm:gap-5">
+        <div className="flex items-center gap-2 sm:gap-3">
           <div className="hidden xl:block">
             <LanguageSwitcher />
           </div>
@@ -108,7 +90,7 @@ export default function Header() {
 
           <button
             type="button"
-            className={`hidden rounded-full px-4 py-2 text-sm font-medium transition sm:inline-flex ${
+            className={`hidden items-center justify-center rounded-full px-3.5 py-1.5 text-xs font-medium transition sm:inline-flex sm:px-4 sm:py-2 sm:text-sm ${
               activeSection === "get-started" && onHome
                 ? "bg-accent text-black hover:opacity-90"
                 : "bg-white text-black hover:bg-neutral-200"

@@ -8,7 +8,7 @@ export default function Integrate() {
   const { t } = useTranslation();
 
   return (
-    <section id="integrate" className="section-glow border-t border-white/5 py-24">
+    <section id="integrate" className="section-glow section-padding border-t border-white/[0.06]">
       <PageShell>
         <SectionHeader
           large
@@ -16,8 +16,8 @@ export default function Integrate() {
           description={t.integrate.description}
         />
 
-        <div className="mt-14">
-          <CodeTabs snippets={integrateSnippets} />
+        <div className="mt-10 sm:mt-14">
+          <CodeTabs snippets={integrateSnippets} compactOnMobile />
         </div>
       </PageShell>
     </section>

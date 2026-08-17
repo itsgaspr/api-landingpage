@@ -12,7 +12,7 @@ export default function DocsPreview() {
   const labels = { ...t.docs.table, ...t.docs.endpoint };
 
   return (
-    <section id="docs" className="section-glow border-t border-white/5 py-24">
+    <section id="docs" className="section-glow section-padding border-t border-white/[0.06]">
       <PageShell>
         <SectionHeader
           large
@@ -21,7 +21,7 @@ export default function DocsPreview() {
         />
 
         {endpoint && (
-          <div className="mt-14 rounded-2xl border border-white/8 bg-white/[0.02] p-6 sm:p-8 lg:p-10">
+          <div className="mt-10 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4 sm:p-6 lg:p-10">
             <EndpointDoc endpoint={endpoint} labels={labels} embedded />
           </div>
         )}
@@ -29,7 +29,7 @@ export default function DocsPreview() {
         <div className="mt-10 flex justify-center">
           <Link
             to="/docs"
-            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-transparent px-5 py-2.5 text-sm font-medium text-neutral-200 transition hover:border-accent hover:text-white"
+            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-neutral-200 transition hover:border-white/20 hover:bg-white/[0.06] hover:text-white"
           >
             {t.docsPreview.readFullDocs}
           </Link>

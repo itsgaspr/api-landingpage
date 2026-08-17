@@ -25,7 +25,7 @@ export default function Documentation() {
     .replace("{rateLimit}", docs.overviewValues.rateLimit);
 
   return (
-    <section id="documentation" className="border-t border-white/5 py-24">
+    <section id="documentation" className="section-padding border-t border-white/[0.06] pt-28 sm:pt-32">
       <PageShell>
         <SectionHeader
           large
